@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36623.8 d17.14
+VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OLTP", "OLTP", "{7033DBFB-6DFA-45DF-9B8D-90FFD42EA6F2}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BikeStoresOLTP", "BikeStoresOLTP\BikeStoresOLTP.sqlproj", "{577B8482-8FC9-4190-97A1-4F5896AAF7E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataWarehouse", "DataWarehouse", "{1406136F-4B6D-4A83-AC2D-1D2F6D6378F3}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BikeStoresDW", "BikeStoresDW\BikeStoresDW.sqlproj", "{5986E2A7-F048-4A71-9A36-2CD5E3A9235E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,12 @@ Global
 		{577B8482-8FC9-4190-97A1-4F5896AAF7E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{577B8482-8FC9-4190-97A1-4F5896AAF7E1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{577B8482-8FC9-4190-97A1-4F5896AAF7E1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5986E2A7-F048-4A71-9A36-2CD5E3A9235E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5986E2A7-F048-4A71-9A36-2CD5E3A9235E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5986E2A7-F048-4A71-9A36-2CD5E3A9235E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5986E2A7-F048-4A71-9A36-2CD5E3A9235E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5986E2A7-F048-4A71-9A36-2CD5E3A9235E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5986E2A7-F048-4A71-9A36-2CD5E3A9235E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -28,6 +38,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7033DBFB-6DFA-45DF-9B8D-90FFD42EA6F2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{577B8482-8FC9-4190-97A1-4F5896AAF7E1} = {7033DBFB-6DFA-45DF-9B8D-90FFD42EA6F2}
+		{1406136F-4B6D-4A83-AC2D-1D2F6D6378F3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{5986E2A7-F048-4A71-9A36-2CD5E3A9235E} = {1406136F-4B6D-4A83-AC2D-1D2F6D6378F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9F4E727-5F8D-4032-80B1-43722CDA47FC}
