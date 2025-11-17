@@ -1,10 +1,11 @@
-CREATE TABLE [dbo].[address_status](
-        [status_id] [int] NOT NULL,
-        [address_status] [varchar](30) NULL,
+CREATE TABLE [dbo].[shipping_method](
+        [method_id] [int] NOT NULL,
+        [method_name] [varchar](100) NULL,
+        [cost] [decimal](6, 2) NULL,
         [rowversion] [timestamp] NOT NULL,
- CONSTRAINT [pk_addr_status] PRIMARY KEY CLUSTERED
+ CONSTRAINT [pk_shipmethod] PRIMARY KEY CLUSTERED
 (
-        [status_id] ASC
+        [method_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 
