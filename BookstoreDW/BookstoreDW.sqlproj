@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>BikeStoresOLTP</Name>
+    <Name>BookstoreDW</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{577b8482-8fc9-4190-97a1-4f5896aaf7e1}</ProjectGuid>
+    <ProjectGuid>{4f76f3a2-9f3a-48e8-8706-3c26b631a058}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>BikeStoresOLTP</RootNamespace>
-    <AssemblyName>BikeStoresOLTP</AssemblyName>
+    <RootNamespace>BookstoreDW</RootNamespace>
+    <AssemblyName>BookstoreDW</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -57,22 +57,6 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Tables\address.sql" />
-    <Build Include="Tables\address_status.sql" />
-    <Build Include="Tables\author.sql" />
-    <Build Include="Tables\book.sql" />
-    <Build Include="Tables\book_author.sql" />
-    <Build Include="Tables\book_language.sql" />
-    <Build Include="Tables\country.sql" />
-    <Build Include="Tables\cust_order.sql" />
-    <Build Include="Tables\customer.sql" />
-    <Build Include="Tables\customer_address.sql" />
-    <Build Include="Tables\order_history.sql" />
-    <Build Include="Tables\order_line.sql" />
-    <Build Include="Tables\order_status.sql" />
-    <Build Include="Tables\publisher.sql" />
-    <Build Include="Tables\shipping_method.sql" />
+    <Folder Include="Tables\dbo" />
   </ItemGroup>
 </Project>

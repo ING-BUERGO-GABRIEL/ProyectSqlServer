@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>BikeStoresDW</Name>
+    <Name>BookstoreOLTP</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{5986e2a7-f048-4a71-9a36-2cd5e3a9235e}</ProjectGuid>
+    <ProjectGuid>{577b8482-8fc9-4190-97a1-4f5896aaf7e1}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>BikeStoresDW</RootNamespace>
-    <AssemblyName>BikeStoresDW</AssemblyName>
+    <RootNamespace>BikeStoresOLTP</RootNamespace>
+    <AssemblyName>BikeStoresOLTP</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -56,16 +56,23 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Schema" />
-    <Folder Include="Schema\Tables" />
-    <Folder Include="Schema\Tables\dbo" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schema\Tables\dbo\DimDate.sql" />
-    <Build Include="Schema\Tables\dbo\DimProcurementProduct.sql" />
-    <Build Include="Schema\Tables\dbo\DimShippingMethod.sql" />
-    <Build Include="Schema\Tables\dbo\DimSupplier.sql" />
-    <Build Include="Schema\Tables\dbo\DimWarehouse.sql" />
-    <Build Include="Schema\Tables\dbo\FactProcurementOrders.sql" />
+    <Build Include="Tables\address.sql" />
+    <Build Include="Tables\address_status.sql" />
+    <Build Include="Tables\author.sql" />
+    <Build Include="Tables\book.sql" />
+    <Build Include="Tables\book_author.sql" />
+    <Build Include="Tables\book_language.sql" />
+    <Build Include="Tables\country.sql" />
+    <Build Include="Tables\cust_order.sql" />
+    <Build Include="Tables\customer.sql" />
+    <Build Include="Tables\customer_address.sql" />
+    <Build Include="Tables\order_history.sql" />
+    <Build Include="Tables\order_line.sql" />
+    <Build Include="Tables\order_status.sql" />
+    <Build Include="Tables\publisher.sql" />
+    <Build Include="Tables\shipping_method.sql" />
   </ItemGroup>
 </Project>
