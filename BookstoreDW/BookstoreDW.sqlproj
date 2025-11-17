@@ -59,4 +59,14 @@
     <Folder Include="Tables" />
     <Folder Include="Tables\dbo" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\\dbo\\DimAddress.sql" />
+    <Build Include="Tables\\dbo\\DimBook.sql" />
+    <Build Include="Tables\\dbo\\DimCustomer.sql" />
+    <Build Include="Tables\\dbo\\DimDate.sql" />
+    <Build Include="Tables\\dbo\\DimOrderStatus.sql" />
+    <Build Include="Tables\\dbo\\DimShippingMethod.sql" />
+    <Build Include="Tables\\dbo\\FactSales.sql" />
+    <Build Include="Tables\\dbo\\PackageConfig.sql" />
+  </ItemGroup>
 </Project>
