@@ -60,5 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\address.sql" />
+    <Build Include="Tables\address_status.sql" />
   </ItemGroup>
 </Project>
