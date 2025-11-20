@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>BookstoreDW</Name>
+    <Name>BikeStoresDW</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{4f76f3a2-9f3a-48e8-8706-3c26b631a058}</ProjectGuid>
+    <ProjectGuid>{3890e5eb-2ed8-4dfd-b3b8-3ee3ebe74977}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>BookstoreDW</RootNamespace>
-    <AssemblyName>BookstoreDW</AssemblyName>
+    <RootNamespace>BikeStoresDW</RootNamespace>
+    <AssemblyName>BikeStoresDW</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -57,19 +57,43 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Schema" />
-    <Folder Include="Schema\Tables" />
-    <Folder Include="Schema\Tables\dbo" />
     <Folder Include="Schema\Programmability" />
     <Folder Include="Schema\Programmability\Stored Procedures" />
+    <Folder Include="Schema\Tables" />
+    <Folder Include="Schema\Security" />
+    <Folder Include="Schema\Security\schemas" />
+    <Folder Include="Schema\Tables\dbo" />
+    <Folder Include="Schema\Tables\staging" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schema\Tables\dbo\DimAddress.sql" />
-    <Build Include="Schema\Tables\dbo\DimBook.sql" />
+    <Build Include="Schema\Security\schemas\staging.sql" />
+    <Build Include="Schema\Tables\staging\staging.customer.sql" />
+    <Build Include="Schema\Tables\staging\staging.orders.sql" />
+    <Build Include="Schema\Tables\staging\staging.product.sql" />
+    <Build Include="Schema\Tables\staging\staging.staff.sql" />
+    <Build Include="Schema\Tables\staging\staging.store.sql" />
     <Build Include="Schema\Tables\dbo\DimCustomer.sql" />
     <Build Include="Schema\Tables\dbo\DimDate.sql" />
-    <Build Include="Schema\Tables\dbo\DimOrderStatus.sql" />
-    <Build Include="Schema\Tables\dbo\DimShippingMethod.sql" />
+    <Build Include="Schema\Tables\dbo\DimProduct.sql" />
+    <Build Include="Schema\Tables\dbo\DimStaff.sql" />
+    <Build Include="Schema\Tables\dbo\DimStore.sql" />
     <Build Include="Schema\Tables\dbo\FactOrders.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimCustomer.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimProduct.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimStaff.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimStore.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeFactOrders.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\UpdateLastPackageRowVersion.sql" />
     <Build Include="Schema\Tables\dbo\PackageConfig.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\PackageConfig.data.sql" />
+    <None Include="Scripts\DimDate.data.sql" />
+    <None Include="Scripts\PatchDimDate.data.sql" />
   </ItemGroup>
 </Project>
