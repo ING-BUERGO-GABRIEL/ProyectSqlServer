@@ -12,7 +12,6 @@ CREATE TABLE [dbo].[FactSales]
         [OrderStatusKey] [int] NULL,
         [Quantity] [int] NOT NULL CONSTRAINT DF_FactSales_Quantity DEFAULT ((1)),
         [UnitPrice] [decimal](10, 2) NOT NULL,
-        [ExtendedAmount] AS ([Quantity] * [UnitPrice]) PERSISTED,
         CONSTRAINT FK_FactSales_DimCustomer FOREIGN KEY ([CustomerKey]) REFERENCES [dbo].[DimCustomer]([CustomerKey]),
         CONSTRAINT FK_FactSales_DimBook FOREIGN KEY ([BookKey]) REFERENCES [dbo].[DimBook]([BookKey]),
         CONSTRAINT FK_FactSales_OrderDate FOREIGN KEY ([OrderDateKey]) REFERENCES [dbo].[DimDate]([DateKey]),
