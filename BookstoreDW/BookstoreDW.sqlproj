@@ -57,10 +57,14 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Schema" />
-    <Folder Include="Schema\Tables" />
-    <Folder Include="Schema\Tables\dbo" />
     <Folder Include="Schema\Programmability" />
     <Folder Include="Schema\Programmability\Stored Procedures" />
+    <Folder Include="Schema\Tables" />
+    <Folder Include="Schema\Tables\dbo" />
+    <Folder Include="Schema\Tables\staging" />
+    <Folder Include="Schema\Security" />
+    <Folder Include="Schema\Security\schemas" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Tables\dbo\DimAddress.sql" />
