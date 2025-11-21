@@ -82,4 +82,22 @@
     <Build Include="Tables\publisher.sql" />
     <Build Include="Tables\shipping_method.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema\Programmability\Stored Procedures\GetAddressChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetAddressStatusChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetAuthorChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetBookAuthorChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetBookChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetBookLanguageChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetCountryChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetCustomerAddressChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetCustomerChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetDatabaseRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetOrderChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetOrderHistoryChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetOrderLineChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetOrderStatusChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetPublisherChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetShippingMethodChangesByRowVersion.sql" />
+  </ItemGroup>
 </Project>
