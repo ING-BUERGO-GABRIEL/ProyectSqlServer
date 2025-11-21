@@ -71,5 +71,13 @@
     <Build Include="Schema\Tables\dbo\DimShippingMethod.sql" />
     <Build Include="Schema\Tables\dbo\FactOrders.sql" />
     <Build Include="Schema\Tables\dbo\PackageConfig.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimAddress.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimBook.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimCustomer.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimOrderStatus.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimShippingMethod.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeFactOrders.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\UpdateLastPackageRowVersion.sql" />
   </ItemGroup>
 </Project>
