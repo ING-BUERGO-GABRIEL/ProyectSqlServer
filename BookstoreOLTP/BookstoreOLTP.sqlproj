@@ -100,7 +100,7 @@
     <Build Include="Schema\Programmability\Stored Procedures\GetShippingMethodChangesByRowVersion.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\Script.PostDeployment.sql" />
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
     <None Include="Scripts\country.data.sql" />
     <None Include="Scripts\address_status.data.sql" />
     <None Include="Scripts\address.data.sql" />
