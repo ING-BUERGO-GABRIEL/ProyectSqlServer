@@ -5,9 +5,7 @@ BEGIN
 END
 ELSE
 BEGIN
-    INSERT INTO dbo.address_status (status_id, address_status) VALUES
-        (1, 'Billing'),
-        (2, 'Shipping'),
-        (3, 'Primary');
+    INSERT [dbo].[address_status] ([status_id], [address_status]) VALUES (1, N'Active')
+    INSERT [dbo].[address_status] ([status_id], [address_status]) VALUES (2, N'Inactive')
 END
 GO
