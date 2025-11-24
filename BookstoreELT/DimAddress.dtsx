@@ -316,7 +316,7 @@ FROM [dbo].[address] AS a
 LEFT JOIN [dbo].[country] AS c ON a.country_id = c.country_id
 LEFT JOIN [dbo].[customer_address] AS ca ON a.address_id = ca.address_id
 LEFT JOIN [dbo].[address_status] AS ast ON ca.status_id = ast.status_id
-WHERE a.[rowversion] > CONVERT(ROWVERSION, ?) AND a.[rowversion] <= CONVERT(ROWVERSION, ?);</property>
+ WHERE a.[rowversion] > CONVERT(ROWVERSION, ?) AND a.[rowversion] &lt;= CONVERT(ROWVERSION, ?);</property>
                 <property
                   dataType="System.String"
                   description="Variable que contiene el comando SQL para ejecutar."
