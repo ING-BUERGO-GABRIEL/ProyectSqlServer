@@ -74,6 +74,7 @@
     <Folder Include="Schema\Security\schemas\" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="Schema\Security\schemas\staging.sql" />
     <Build Include="Schema\\Tables\\dbo\\DimAddress.sql" />
     <Build Include="Schema\\Tables\\dbo\\DimBook.sql" />
     <Build Include="Schema\\Tables\\dbo\\DimCustomer.sql" />
@@ -82,12 +83,12 @@
     <Build Include="Schema\\Tables\\dbo\\DimShippingMethod.sql" />
     <Build Include="Schema\\Tables\\dbo\\FactOrders.sql" />
     <Build Include="Schema\\Tables\\dbo\\PackageConfig.sql" />
-    <Build Include="Schema\\Tables\\staging\\DimAddress.sql" />
-    <Build Include="Schema\\Tables\\staging\\DimBook.sql" />
-    <Build Include="Schema\\Tables\\staging\\DimCustomer.sql" />
-    <Build Include="Schema\\Tables\\staging\\DimOrderStatus.sql" />
-    <Build Include="Schema\\Tables\\staging\\DimShippingMethod.sql" />
-    <Build Include="Schema\\Tables\\staging\\FactOrders.sql" />
+    <Build Include="Schema\Tables\staging\staging.DimAddress.sql" />
+    <Build Include="Schema\Tables\staging\staging.DimBook.sql" />
+    <Build Include="Schema\Tables\staging\staging.DimCustomer.sql" />
+    <Build Include="Schema\Tables\staging\staging.DimOrderStatus.sql" />
+    <Build Include="Schema\Tables\staging\staging.DimShippingMethod.sql" />
+    <Build Include="Schema\Tables\staging\staging.FactOrders.sql" />
     <Build Include="Schema\\Programmability\\Stored Procedures\\DW_MergeDimAddress.sql" />
     <Build Include="Schema\\Programmability\\Stored Procedures\\DW_MergeDimBook.sql" />
     <Build Include="Schema\\Programmability\\Stored Procedures\\DW_MergeDimCustomer.sql" />
@@ -104,5 +105,6 @@
     <None Include="Scripts\\PackageConfig.data.sql" />
     <None Include="Scripts\\DimDate.data.sql" />
     <None Include="Scripts\\PatchDimDate.data.sql" />
+
   </ItemGroup>
 </Project>
