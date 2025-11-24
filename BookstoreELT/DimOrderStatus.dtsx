@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="DimOrderStatus"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{9D28E9CF-2621-47C2-A1F3-3B744CF19D9A}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{1F5BAFE5-13DA-472E-858B-74DD30921234}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -253,7 +253,7 @@
                 <property
                   dataType="System.String"
                   description="Asignaciones entre los parámetros del comando SQL y las variables."
-                  name="ParameterMapping">"@startRow:Input",{067131AD-3806-465E-A233-35EB801F7190};"@endRow :Input",{827CAC14-1839-455F-86F3-E44BC8729134};</property>
+                  name="ParameterMapping">"@startRow:Input",{067131AD-3806-465E-A233-35EB801F7190};"@endRow:Input",{827CAC14-1839-455F-86F3-E44BC8729134};</property>
               </properties>
               <connections>
                 <connection
