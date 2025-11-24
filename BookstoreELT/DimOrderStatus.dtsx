@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="DimOrderStatus"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{1F5BAFE5-13DA-472E-858B-74DD30921234}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{57D200BA-58B9-4FE3-9C5C-C5E2FF64A9AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -800,6 +800,14 @@ where [refTable].[StatusID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\Add new OrderStatus"
+          TopLeft="273.541655630495,340.73683836404" />
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Clear UP Staging"
+          TopLeft="268.458322464799,259.315786626448" />
+        <NodeLayout
           Size="128,42.6666666666667"
           Id="Package\Get DBTS"
           TopLeft="300.624986561016,99.2105252264775" />
@@ -807,6 +815,14 @@ where [refTable].[StatusID] = ?</property>
           Size="217.333333333334,42.6666666666667"
           Id="Package\Get OrderStatus RowVersion"
           TopLeft="248.333322828015,182.684208520479" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Sync OrderStatus"
+          TopLeft="278.416656217228,425.701750517029" />
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\Update LastRowVersion"
+          TopLeft="262.79165691572,496.68420680763" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="360.812488027849,141.877191893144">
@@ -829,10 +845,6 @@ where [refTable].[StatusID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="173.333333333334,42.6666666666667"
-          Id="Package\Clear UP Staging"
-          TopLeft="268.458322464799,259.315786626448" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
           TopLeft="356.062489313074,225.350875187146">
@@ -855,10 +867,6 @@ where [refTable].[StatusID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181.333333333334,42.6666666666667"
-          Id="Package\Add new OrderStatus"
-          TopLeft="273.541655630495,340.73683836404" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
           TopLeft="355.124989131466,301.982453293115">
@@ -893,10 +901,6 @@ where [refTable].[StatusID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Sync OrderStatus"
-          TopLeft="278.416656217228,425.701750517029" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
           TopLeft="362.312489257194,383.403505030707">
@@ -919,10 +923,6 @@ where [refTable].[StatusID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="194.666666666667,42.6666666666667"
-          Id="Package\Update LastRowVersion"
-          TopLeft="262.79165691572,496.68420680763" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
           TopLeft="360.27082323314,468.368417183696">
@@ -1081,20 +1081,12 @@ where [refTable].[StatusID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new OrderStatus\Get Employees">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Add new OrderStatus\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1104,7 +1096,7 @@ where [refTable].[StatusID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1112,7 +1104,15 @@ where [refTable].[StatusID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new OrderStatus\Load staging">
+    design-time-name="Package\Add new OrderStatus\Get Employees">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add new OrderStatus\Add Order Status">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1125,7 +1125,7 @@ where [refTable].[StatusID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new OrderStatus\Add Order Status">
+    design-time-name="Package\Add new OrderStatus\Load staging">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
