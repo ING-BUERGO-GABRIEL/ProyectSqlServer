@@ -82,6 +82,12 @@
     <Build Include="Schema\\Tables\\dbo\\DimShippingMethod.sql" />
     <Build Include="Schema\\Tables\\dbo\\FactOrders.sql" />
     <Build Include="Schema\\Tables\\dbo\\PackageConfig.sql" />
+    <Build Include="Schema\\Tables\\staging\\DimAddress.sql" />
+    <Build Include="Schema\\Tables\\staging\\DimBook.sql" />
+    <Build Include="Schema\\Tables\\staging\\DimCustomer.sql" />
+    <Build Include="Schema\\Tables\\staging\\DimOrderStatus.sql" />
+    <Build Include="Schema\\Tables\\staging\\DimShippingMethod.sql" />
+    <Build Include="Schema\\Tables\\staging\\FactOrders.sql" />
     <Build Include="Schema\\Programmability\\Stored Procedures\\DW_MergeDimAddress.sql" />
     <Build Include="Schema\\Programmability\\Stored Procedures\\DW_MergeDimBook.sql" />
     <Build Include="Schema\\Programmability\\Stored Procedures\\DW_MergeDimCustomer.sql" />
