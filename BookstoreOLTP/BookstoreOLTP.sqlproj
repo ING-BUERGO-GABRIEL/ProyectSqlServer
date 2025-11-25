@@ -83,7 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Programmability\Stored Procedures\GetAddressChangesByRowVersion.sql" />
-    <Build Include="Schema\Programmability\Stored Procedures\GetAddressStatusChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\GetAuthorChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\GetBookAuthorChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\GetBookChangesByRowVersion.sql" />
