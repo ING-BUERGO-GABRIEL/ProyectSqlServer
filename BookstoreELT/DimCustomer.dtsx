@@ -1,64 +1,64 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="11/23/2025 6:57:49 PM"
+  DTS:CreationDate="11/26/2025 12:00:19 PM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="DESKTOP-MDQIRT4"
-  DTS:CreatorName="DESKTOP-MDQIRT4\Gabriel-MSI"
-  DTS:DTSID="{24E9CA68-AE6C-40DD-B0F5-19B0447E1DFA}"
+  DTS:CreatorComputerName="BRAYAN"
+  DTS:CreatorName="BRAYAN\usuario"
+  DTS:DTSID="{F42ED898-55A0-4964-B00B-A15BE7A8A82F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="DimCustomer"
   DTS:PackageType="5"
   DTS:VersionBuild="41"
-  DTS:VersionGUID="{6BE636A8-605C-43A3-99E0-3CE0FAC2EA69}">
+  DTS:VersionGUID="{242F8C9E-52F1-42AA-89E8-775F1E81A52D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Destination.BookstoreDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{938D03C2-ECCC-4CDF-810F-857633985841}"
+      DTS:DTSID="{CD170142-9EF7-43DA-999F-66E83D53BF78}"
       DTS:ObjectName="Destination.BookstoreDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookstoreDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimOrderStatus-{938D03C2-ECCC-4CDF-810F-857633985841}localhost.BookstoreDW;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookstoreDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DimCustomer-{CD170142-9EF7-43DA-999F-66E83D53BF78}localhost.BookstoreDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Sourse.BookstoreOLTP]"
+      DTS:refId="Package.ConnectionManagers[Source.BookstoreOLTP]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{94072D61-246F-416F-A6E1-56C8DE900201}"
-      DTS:ObjectName="Sourse.BookstoreOLTP">
+      DTS:DTSID="{4D89A8B6-1C4C-406F-A291-F1F503C5E39E}"
+      DTS:ObjectName="Source.BookstoreOLTP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookstoreOLTP;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimOrderStatus-{94072D61-246F-416F-A6E1-56C8DE900201}localhost.BookstoreOLTP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookstoreOLTP;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DimCustomer-{4D89A8B6-1C4C-406F-A291-F1F503C5E39E}localhost.BookstoreOLTP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F2574E2F-63BD-45EE-804C-A9C6B5016FB0}"
+      DTS:DTSID="{A25E2EFB-DB60-4B51-93F7-E687B59EF383}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="DBTS">
+      DTS:ObjectName="dbts">
       <DTS:VariableValue
-        DTS:DataType="20">0</DTS:VariableValue>
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{CBF2C26C-778D-4BE5-B25D-C38DEA0E0753}"
+      DTS:DTSID="{E86E243E-59D1-4A24-A947-222D6693E8EC}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="LastRowVersion">
+      DTS:ObjectName="lastRowVersion">
       <DTS:VariableValue
-        DTS:DataType="20">0</DTS:VariableValue>
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -66,7 +66,7 @@
       DTS:refId="Package\Add new Customer"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
-      DTS:DTSID="{CF185C40-F821-4F2C-8686-74BE37FE4B7A}"
+      DTS:DTSID="{F5700539-B0F3-406D-8BB3-D1B906C7B172}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Add new Customer"
@@ -76,6 +76,285 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Add new Customer\Add Customer"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Add Customer"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DimCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add new Customer\Add Customer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Destination.BookstoreDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[Destination.BookstoreDW]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerID]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[FirstName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[FirstName]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[LastName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[LastName]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="350"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[Email]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[AddressID]"
+                      cachedDataType="i4"
+                      cachedName="AddressID"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressID]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[AddressStatusID]"
+                      cachedDataType="i4"
+                      cachedName="AddressStatusID"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[StreetNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="StreetNumber"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StreetNumber]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[StreetName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="StreetName"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StreetName]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="CountryName"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryName]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[AddressStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="AddressStatus"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[IsCurrent]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IsCurrent]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[EffectiveStartDate]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="EffectiveStartDate"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[EffectiveStartDate]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EffectiveStartDate]" />
+                    <inputColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].Columns[EffectiveEndDate]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="EffectiveEndDate"
+                      externalMetadataColumnId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[EffectiveEndDate]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EffectiveEndDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[FirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[LastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="350"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
+                      dataType="i4"
+                      name="AddressID" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
+                      dataType="i4"
+                      name="AddressStatusID" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="StreetNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="StreetName" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="CountryName" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="AddressStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[EffectiveStartDate]"
+                      dataType="dbTimeStamp2"
+                      name="EffectiveStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[EffectiveEndDate]"
+                      dataType="dbTimeStamp2"
+                      name="EffectiveEndDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add new Customer\Add Customer.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add new Customer\Add Customer.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add new Customer\Add Customer.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Add Customer.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add new Customer\Add Customer.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Add new Customer\Búsqueda"
               componentClassID="Microsoft.Lookup"
@@ -112,7 +391,7 @@ where [refTable].[CustomerID] = ?</property>
                   dataType="System.Int32"
                   description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
@@ -133,7 +412,7 @@ where [refTable].[CustomerID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                  name="ParameterMap">#{Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CustomerID]};</property>
+                  name="ParameterMap">#{Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -160,7 +439,7 @@ where [refTable].[CustomerID] = ?</property>
                       refId="Package\Add new Customer\Búsqueda.Inputs[Entrada de búsqueda].Columns[CustomerID]"
                       cachedDataType="i4"
                       cachedName="CustomerID"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CustomerID]">
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -180,7 +459,6 @@ where [refTable].[CustomerID] = ?</property>
                 <output
                   refId="Package\Add new Customer\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
                   errorOrTruncationOperation="Búsqueda"
-                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Salida de entradas coincidentes de búsqueda"
                   synchronousInputId="Package\Add new Customer\Búsqueda.Inputs[Entrada de búsqueda]">
@@ -235,11 +513,417 @@ where [refTable].[CustomerID] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Add new Customer\Destino de OLE DB"
+              refId="Package\Add new Customer\Origen de OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DimCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add new Customer\Origen de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Destination.BookstoreDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[Destination.BookstoreDW]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerKey]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerKey]"
+                      name="CustomerKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FirstName]"
+                      length="200"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[LastName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[LastName]"
+                      length="200"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Email]"
+                      length="350"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressID]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressID]"
+                      name="AddressID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressStatusID]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]"
+                      name="AddressStatusID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StreetNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[StreetNumber]"
+                      length="10"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StreetNumber]"
+                      name="StreetNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StreetName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[StreetName]"
+                      length="200"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StreetName]"
+                      name="StreetName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      length="100"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CountryName]"
+                      length="200"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryName]"
+                      name="CountryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressStatus]"
+                      length="30"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]"
+                      name="AddressStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IsCurrent]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[IsCurrent]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IsCurrent]"
+                      name="IsCurrent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EffectiveStartDate]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[EffectiveStartDate]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EffectiveStartDate]"
+                      name="EffectiveStartDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EffectiveEndDate]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[EffectiveEndDate]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EffectiveEndDate]"
+                      name="EffectiveEndDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[LastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="350"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressID]"
+                      dataType="i4"
+                      name="AddressID" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressStatusID]"
+                      dataType="i4"
+                      name="AddressStatusID" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[StreetNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="StreetNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[StreetName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="StreetName" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="CountryName" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="AddressStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[EffectiveStartDate]"
+                      dataType="dbTimeStamp2"
+                      name="EffectiveStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[EffectiveEndDate]"
+                      dataType="dbTimeStamp2"
+                      name="EffectiveEndDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CustomerKey]"
+                      dataType="i4"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CustomerKey]"
+                      name="CustomerKey" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[LastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="350"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Email]"
+                      name="Email" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[AddressID]"
+                      dataType="i4"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[AddressID]"
+                      name="AddressID" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[AddressStatusID]"
+                      dataType="i4"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[AddressStatusID]"
+                      name="AddressStatusID" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[StreetNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[StreetNumber]"
+                      name="StreetNumber" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[StreetName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[StreetName]"
+                      name="StreetName" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CountryName]"
+                      name="CountryName" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[AddressStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[AddressStatus]"
+                      name="AddressStatus" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[IsCurrent]"
+                      dataType="bool"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[IsCurrent]"
+                      name="IsCurrent" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[EffectiveStartDate]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[EffectiveStartDate]"
+                      name="EffectiveStartDate" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[EffectiveEndDate]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[EffectiveEndDate]"
+                      name="EffectiveEndDate" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add new Customer\Update Customer"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Destino de OLE DB"
-              name="Destino de OLE DB"
+              name="Update Customer"
               usesDispositions="true"
               version="4">
               <properties>
@@ -292,7 +976,7 @@ where [refTable].[CustomerID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add new Customer\Destino de OLE DB.Connections[OleDbConnection]"
+                  refId="Package\Add new Customer\Update Customer.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Destination.BookstoreDW]"
                   connectionManagerRefId="Package.ConnectionManagers[Destination.BookstoreDW]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -300,153 +984,153 @@ where [refTable].[CustomerID] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB]"
                   errorOrTruncationOperation="Insertar"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[CustomerID]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[CustomerID]"
                       cachedDataType="i4"
                       cachedName="CustomerID"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerID]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CustomerID]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerID]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[FirstName]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[FirstName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="200"
                       cachedName="FirstName"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[FirstName]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[FirstName]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[FirstName]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FirstName]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[LastName]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[LastName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="200"
                       cachedName="LastName"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[LastName]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[LastName]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[LastName]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[LastName]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[Email]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[Email]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="350"
                       cachedName="Email"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Email]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[Email]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[Email]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Email]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[AddressID]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[AddressID]"
                       cachedDataType="i4"
                       cachedName="AddressID"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressID]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressID]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[AddressStatusID]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[AddressStatusID]"
                       cachedDataType="i4"
                       cachedName="AddressStatusID"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[StreetNumber]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[StreetNumber]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="StreetNumber"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[StreetNumber]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StreetNumber]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[StreetName]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[StreetName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="200"
                       cachedName="StreetName"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[StreetName]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StreetName]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[City]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[City]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="City"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[City]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[City]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[CountryName]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[CountryName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="200"
                       cachedName="CountryName"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CountryName]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryName]" />
                     <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[AddressStatus]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].Columns[AddressStatus]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="AddressStatus"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]" />
+                      externalMetadataColumnId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
+                      lineageId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerID]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerID]"
                       dataType="i4"
                       name="CustomerID" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[FirstName]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[FirstName]"
                       codePage="1252"
                       dataType="str"
                       length="200"
                       name="FirstName" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[LastName]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[LastName]"
                       codePage="1252"
                       dataType="str"
                       length="200"
                       name="LastName" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Email]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[Email]"
                       codePage="1252"
                       dataType="str"
                       length="350"
                       name="Email" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
                       dataType="i4"
                       name="AddressID" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
                       dataType="i4"
                       name="AddressStatusID" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="StreetNumber" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
                       codePage="1252"
                       dataType="str"
                       length="200"
                       name="StreetName" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
                       codePage="1252"
                       dataType="str"
                       length="200"
                       name="CountryName" />
                     <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
+                      refId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
                       codePage="1252"
                       dataType="str"
                       length="30"
@@ -456,617 +1140,22 @@ where [refTable].[CustomerID] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Add new Customer\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                  refId="Package\Add new Customer\Update Customer.Outputs[Salida de error de destino de OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                  synchronousInputId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      refId="Package\Add new Customer\Update Customer.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Add new Customer\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Add new Customer\Update Customer.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Add new Customer\Update Customer.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add new Customer\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Add new Customer\Destino de OLE DB 1"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
-              description="Destino de OLE DB"
-              name="Destino de OLE DB 1"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[DimCustomer]</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Add new Customer\Destino de OLE DB 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Destination.BookstoreDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[Destination.BookstoreDW]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB]"
-                  errorOrTruncationOperation="Insertar"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de destino de OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[CustomerID]"
-                      cachedDataType="i4"
-                      cachedName="CustomerID"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerID]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CustomerID]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[FirstName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="FirstName"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[FirstName]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[FirstName]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[LastName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="LastName"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[LastName]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[LastName]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[Email]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="350"
-                      cachedName="Email"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[Email]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[Email]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[AddressID]"
-                      cachedDataType="i4"
-                      cachedName="AddressID"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressID]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[AddressStatusID]"
-                      cachedDataType="i4"
-                      cachedName="AddressStatusID"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[StreetNumber]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="StreetNumber"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[StreetNumber]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[StreetName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="StreetName"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[StreetName]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[City]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="City"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[City]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[CountryName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="CountryName"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CountryName]" />
-                    <inputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].Columns[AddressStatus]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="AddressStatus"
-                      externalMetadataColumnId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerKey]"
-                      dataType="i4"
-                      name="CustomerKey" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerID]"
-                      dataType="i4"
-                      name="CustomerID" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[FirstName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="FirstName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="LastName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[Email]"
-                      codePage="1252"
-                      dataType="str"
-                      length="350"
-                      name="Email" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
-                      dataType="i4"
-                      name="AddressID" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
-                      dataType="i4"
-                      name="AddressStatusID" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="StreetNumber" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="StreetName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="City" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="CountryName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="AddressStatus" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[IsCurrent]"
-                      dataType="bool"
-                      name="IsCurrent" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[EffectiveStartDate]"
-                      dataType="dbTimeStamp2"
-                      name="EffectiveStartDate" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[EffectiveEndDate]"
-                      dataType="dbTimeStamp2"
-                      name="EffectiveEndDate" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Add new Customer\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Add new Customer\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Add new Customer\Destino de OLE DB 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Add new Customer\Get Customer"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
-              description="Origen de OLE DB"
-              name="Get Customer"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetCustomerChangesByRowVersion] ?,  ?</property>
-                <property
-                  dataType="System.String"
-                  description="Variable que contiene el comando SQL para ejecutar."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
-                  name="AccessMode"
-                  typeConverter="AccessMode">2</property>
-                <property
-                  dataType="System.String"
-                  description="Asignaciones entre los parámetros del comando SQL y las variables."
-                  name="ParameterMapping">"@startRow:Input",{CBF2C26C-778D-4BE5-B25D-C38DEA0E0753};"@endRow:Input",{F2574E2F-63BD-45EE-804C-A9C6B5016FB0};</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Add new Customer\Get Customer.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Sourse.BookstoreOLTP]"
-                  connectionManagerRefId="Package.ConnectionManagers[Sourse.BookstoreOLTP]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB]"
-                  name="Salida de origen de OLE DB">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
-                      name="CustomerID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[FirstName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[FirstName]"
-                      length="200"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[FirstName]"
-                      name="FirstName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[LastName]"
-                      length="200"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[LastName]"
-                      name="LastName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[Email]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[Email]"
-                      length="350"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[Email]"
-                      name="Email"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressID]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressID]"
-                      name="AddressID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressStatusID]"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]"
-                      name="AddressStatusID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[StreetNumber]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[StreetNumber]"
-                      length="10"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[StreetNumber]"
-                      name="StreetNumber"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[StreetName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[StreetName]"
-                      length="200"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[StreetName]"
-                      name="StreetName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
-                      length="100"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[City]"
-                      name="City"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CountryName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[CountryName]"
-                      length="200"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[CountryName]"
-                      name="CountryName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressStatus]"
-                      length="30"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]"
-                      name="AddressStatus"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
-                      dataType="i4"
-                      name="CustomerID" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[FirstName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="FirstName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="LastName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[Email]"
-                      codePage="1252"
-                      dataType="str"
-                      length="350"
-                      name="Email" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressID]"
-                      dataType="i4"
-                      name="AddressID" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressStatusID]"
-                      dataType="i4"
-                      name="AddressStatusID" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[StreetNumber]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="StreetNumber" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[StreetName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="StreetName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="City" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[CountryName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="CountryName" />
-                    <externalMetadataColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB].ExternalColumns[AddressStatus]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="AddressStatus" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB]"
-                  isErrorOut="true"
-                  name="Salida de error de origen de OLE DB">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
-                      dataType="i4"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
-                      name="CustomerID" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[FirstName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[FirstName]"
-                      name="FirstName" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[LastName]"
-                      name="LastName" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[Email]"
-                      codePage="1252"
-                      dataType="str"
-                      length="350"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[Email]"
-                      name="Email" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[AddressID]"
-                      dataType="i4"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[AddressID]"
-                      name="AddressID" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[AddressStatusID]"
-                      dataType="i4"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[AddressStatusID]"
-                      name="AddressStatusID" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[StreetNumber]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[StreetNumber]"
-                      name="StreetNumber" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[StreetName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[StreetName]"
-                      name="StreetName" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[City]"
-                      name="City" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[CountryName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[CountryName]"
-                      name="CountryName" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[AddressStatus]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[AddressStatus]"
-                      name="AddressStatus" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Add new Customer\Get Customer.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Add new Customer\Update Customer.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1078,98 +1167,98 @@ where [refTable].[CustomerID] = ?</property>
           <paths>
             <path
               refId="Package\Add new Customer.Paths[Salida de entradas coincidentes de búsqueda]"
-              endId="Package\Add new Customer\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+              endId="Package\Add new Customer\Update Customer.Inputs[Entrada de destino de OLE DB]"
               name="Salida de entradas coincidentes de búsqueda"
               startId="Package\Add new Customer\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
             <path
               refId="Package\Add new Customer.Paths[Salida de entradas no coincidentes de búsqueda]"
-              endId="Package\Add new Customer\Destino de OLE DB 1.Inputs[Entrada de destino de OLE DB]"
+              endId="Package\Add new Customer\Add Customer.Inputs[Entrada de destino de OLE DB]"
               name="Salida de entradas no coincidentes de búsqueda"
               startId="Package\Add new Customer\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
             <path
               refId="Package\Add new Customer.Paths[Salida de origen de OLE DB]"
               endId="Package\Add new Customer\Búsqueda.Inputs[Entrada de búsqueda]"
               name="Salida de origen de OLE DB"
-              startId="Package\Add new Customer\Get Customer.Outputs[Salida de origen de OLE DB]" />
+              startId="Package\Add new Customer\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Clear UP Staging"
+      DTS:refId="Package\Cleanup Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{8499B7DA-8A59-4197-8F6C-7EAC16CFBEF9}"
+      DTS:DTSID="{D7E5FC4E-2A9A-44BA-AB8E-586C1504E327}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Clear UP Staging"
+      DTS:ObjectName="Cleanup Staging"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{938D03C2-ECCC-4CDF-810F-857633985841}"
+          SQLTask:Connection="{CD170142-9EF7-43DA-999F-66E83D53BF78}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE staging.DimCustomer" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get Customer RowVersion"
+      DTS:refId="Package\Get Database RowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{1B88ABD6-BA18-4916-9D4D-BFC490B544B3}"
+      DTS:DTSID="{AFC4C72D-1D13-48FB-9936-6DD7FB238F19}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get Customer RowVersion"
+      DTS:ObjectName="Get Database RowVersion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{938D03C2-ECCC-4CDF-810F-857633985841}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'customer'"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LastRowVersion"
-            SQLTask:DtsVariableName="User::LastRowVersion" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get DBTS"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{3987EC39-53F6-46FC-88EC-902B0C0B3CFE}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get DBTS"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{94072D61-246F-416F-A6E1-56C8DE900201}"
+          SQLTask:Connection="{4D89A8B6-1C4C-406F-A291-F1F503C5E39E}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion] "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="DBTS"
-            SQLTask:DtsVariableName="User::DBTS" />
+            SQLTask:DtsVariableName="User::dbts" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Sync OrderStatus"
+      DTS:refId="Package\Get LastRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{17C5E38A-E385-4C04-A7FC-59E59F052A47}"
+      DTS:DTSID="{ED16CFEE-AB94-4369-8692-B002C585E803}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Sync OrderStatus"
+      DTS:ObjectName="Get LastRowVersion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{938D03C2-ECCC-4CDF-810F-857633985841}"
+          SQLTask:Connection="{CD170142-9EF7-43DA-999F-66E83D53BF78}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'customer'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LastRowVersion"
+            SQLTask:DtsVariableName="User::lastRowVersion" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sync Customer"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{E88ACD87-44F0-4061-914D-7442EB93C44A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sync Customer"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CD170142-9EF7-43DA-999F-66E83D53BF78}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeDimCustomer] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1177,7 +1266,7 @@ where [refTable].[CustomerID] = ?</property>
       DTS:refId="Package\Update LastRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{947FBA8D-E849-454A-9E82-0CF3167BC086}"
+      DTS:DTSID="{AEB1A391-E88A-4100-893F-3167C5C2005A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LastRowVersion"
@@ -1186,11 +1275,11 @@ where [refTable].[CustomerID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{938D03C2-ECCC-4CDF-810F-857633985841}"
+          SQLTask:Connection="{CD170142-9EF7-43DA-999F-66E83D53BF78}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName = 'customer', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::DBTS"
+            SQLTask:DtsVariableName="User::dbts"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="3"
             SQLTask:ParameterSize="-1" />
@@ -1202,40 +1291,40 @@ where [refTable].[CustomerID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{2509A5EA-985F-4567-B319-79814B493A13}"
-      DTS:From="Package\Get DBTS"
+      DTS:DTSID="{E3401B42-6D1D-4518-B18F-46E6612BE4D0}"
+      DTS:From="Package\Get Database RowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
-      DTS:To="Package\Get Customer RowVersion" />
+      DTS:To="Package\Get LastRowVersion" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
-      DTS:DTSID="{D5F64FD3-FBF5-4FBE-896A-FBD20C1DD1C7}"
-      DTS:From="Package\Get Customer RowVersion"
+      DTS:DTSID="{9D430317-DE07-4075-BABB-A8F1D0CE1CA2}"
+      DTS:From="Package\Get LastRowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"
-      DTS:To="Package\Clear UP Staging" />
+      DTS:To="Package\Cleanup Staging" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
       DTS:CreationName=""
-      DTS:DTSID="{AE17F965-C0F5-42AD-93C4-893E473D7213}"
-      DTS:From="Package\Clear UP Staging"
+      DTS:DTSID="{08BBCC0C-FA0B-4C81-8CA2-4E5B996F2E96}"
+      DTS:From="Package\Cleanup Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 2"
       DTS:To="Package\Add new Customer" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
       DTS:CreationName=""
-      DTS:DTSID="{539BBA56-4BC9-46F8-B89E-CE2A4D75A289}"
+      DTS:DTSID="{EE69077E-2C65-4D3C-BD8A-9ADEDF68FF8B}"
       DTS:From="Package\Add new Customer"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 3"
-      DTS:To="Package\Sync OrderStatus" />
+      DTS:To="Package\Sync Customer" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
       DTS:CreationName=""
-      DTS:DTSID="{8E2D8D8F-F3AD-4F35-A0F8-1E002FAEF047}"
-      DTS:From="Package\Sync OrderStatus"
+      DTS:DTSID="{6C7CD166-4E4F-4117-B2C1-E3E5751C7EB5}"
+      DTS:From="Package\Sync Customer"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 4"
       DTS:To="Package\Update LastRowVersion" />
@@ -1253,55 +1342,55 @@ where [refTable].[CustomerID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.666666666667,42.6666666666667"
+          Size="172,42"
           Id="Package\Add new Customer"
-          TopLeft="273.541655630495,340.73683836404" />
+          TopLeft="291,360" />
         <NodeLayout
-          Size="173.333333333334,42.6666666666667"
-          Id="Package\Clear UP Staging"
-          TopLeft="268.458322464799,259.315786626448" />
+          Size="160,42"
+          Id="Package\Cleanup Staging"
+          TopLeft="301,262" />
         <NodeLayout
-          Size="206.666666666667,42.6666666666667"
-          Id="Package\Get Customer RowVersion"
-          TopLeft="248.333322828015,182.684208520479" />
+          Size="209.333333333334,42"
+          Id="Package\Get Database RowVersion"
+          TopLeft="284,67" />
         <NodeLayout
-          Size="128,42.6666666666667"
-          Id="Package\Get DBTS"
-          TopLeft="300.624986561016,99.2105252264775" />
+          Size="180,42"
+          Id="Package\Get LastRowVersion"
+          TopLeft="289,168" />
         <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Sync OrderStatus"
-          TopLeft="278.416656217228,425.701750517029" />
+          Size="154,42"
+          Id="Package\Sync Customer"
+          TopLeft="301,461" />
         <NodeLayout
-          Size="194.666666666667,42.6666666666667"
+          Size="198,42"
           Id="Package\Update LastRowVersion"
-          TopLeft="262.79165691572,496.68420680763" />
+          TopLeft="294,553" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="364.624986561016,141.877191893144">
+          TopLeft="388.5,109">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.9583303996677,40.8070166273348"
+              EndConnector="-9.5,59"
               Start="0,0"
-              End="-12.9583303996677,33.3070166273348">
+              End="-9.5,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.4035083136674" />
+                    End="0,25.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.4035083136674"
-                    Point2="0,20.4035083136674"
-                    Point3="-4,20.4035083136674" />
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="-4,29.5" />
                   <mssgle:LineSegment
-                    End="-8.95833039966766,20.4035083136674" />
+                    End="-5.5,29.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-8.95833039966766,20.4035083136674"
-                    Point2="-12.9583303996677,20.4035083136674"
-                    Point3="-12.9583303996677,24.4035083136674" />
+                    Point1="-5.5,29.5"
+                    Point2="-9.5,29.5"
+                    Point3="-9.5,33.5" />
                   <mssgle:LineSegment
-                    End="-12.9583303996677,33.3070166273348" />
+                    End="-9.5,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1312,18 +1401,18 @@ where [refTable].[CustomerID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="353.395822646407,225.350875187146">
+          TopLeft="380,210">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.9649114393024"
+              EndConnector="0,52"
               Start="0,0"
-              End="0,26.4649114393024">
+              End="0,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.4649114393024" />
+                    End="0,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1334,18 +1423,18 @@ where [refTable].[CustomerID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="356.999989047647,301.982453293115">
+          TopLeft="379,304">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.7543850709253"
+              EndConnector="0,56"
               Start="0,0"
-              End="0,31.2543850709253">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.2543850709253" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1356,18 +1445,18 @@ where [refTable].[CustomerID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="359.645822590528,383.403505030707">
+          TopLeft="377.5,402">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.2982454863223"
+              EndConnector="0,59"
               Start="0,0"
-              End="0,34.7982454863223">
+              End="0,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.7982454863223" />
+                    End="0,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1378,18 +1467,30 @@ where [refTable].[CustomerID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
-          TopLeft="360.27082323314,468.368417183696">
+          TopLeft="378,503">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.3157896239342"
+              EndConnector="15,50"
               Start="0,0"
-              End="0,20.8157896239342">
+              End="15,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.8157896239342" />
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="11,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,25"
+                    Point2="15,25"
+                    Point3="15,29" />
+                  <mssgle:LineSegment
+                    End="15,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1407,114 +1508,124 @@ where [refTable].[CustomerID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="145.333333333334,42.6666666666667"
-          Id="Package\Add new Customer\Get Customer"
-          TopLeft="339.374984828756,83.4736832940017" />
+          Size="170,42"
+          Id="Package\Add new Customer\Origen de OLE DB"
+          TopLeft="325,48" />
+        <NodeLayout
+          Size="149.333333333334,42"
+          Id="Package\Add new Customer\Add Customer"
+          TopLeft="594,307" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Add new Customer\Update Customer"
+          TopLeft="174,293" />
         <NodeLayout
           Size="128,42.6666666666667"
           Id="Package\Add new Customer\Búsqueda"
-          TopLeft="341.874984716997,166.175437093992" />
+          TopLeft="376.874983152375,162.052630129036" />
         <EdgeLayout
           Id="Package\Add new Customer.Paths[Salida de origen de OLE DB]"
-          TopLeft="408.95831810621,126.140349960668">
+          TopLeft="410,90">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.0350871333235"
+              EndConnector="30.8749831523752,72.0526301290355"
               Start="0,0"
-              End="0,32.5350871333235">
+              End="30.8749831523752,64.5526301290355">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.5350871333235" />
+                    End="0,32.0263150645178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.0263150645178"
+                    Point2="0,36.0263150645178"
+                    Point3="4,36.0263150645178" />
+                  <mssgle:LineSegment
+                    End="26.8749831523752,36.0263150645178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.8749831523752,36.0263150645178"
+                    Point2="30.8749831523752,36.0263150645178"
+                    Point3="30.8749831523752,40.0263150645178" />
+                  <mssgle:LineSegment
+                    End="30.8749831523752,64.5526301290355" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.4044140625,11.3686177854118,46.808828125,9.7978515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Add new Customer\Destino de OLE DB"
-          TopLeft="231.87498963438,257.947365588841" />
         <EdgeLayout
           Id="Package\Add new Customer.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="405.874984716997,208.842103760659">
+          TopLeft="420.874983152375,204.719296795702">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-87.999995082617,49.1052618281829"
+              EndConnector="-165.541649819042,88.2807032042978"
               Start="0,0"
-              End="-87.999995082617,41.6052618281829">
+              End="-165.541649819042,80.7807032042978">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5526309140915" />
+                    End="0,31.9662124165658" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.5526309140915"
-                    Point2="0,24.5526309140915"
-                    Point3="-4,24.5526309140915" />
+                    Point1="0,31.9662124165658"
+                    Point2="0,35.9662124165658"
+                    Point3="-4,35.9662124165658" />
                   <mssgle:LineSegment
-                    End="-83.999995082617,24.5526309140915" />
+                    End="-161.541649819042,35.9662124165658" />
                   <mssgle:CubicBezierSegment
-                    Point1="-83.999995082617,24.5526309140915"
-                    Point2="-87.999995082617,24.5526309140915"
-                    Point3="-87.999995082617,28.5526309140915" />
+                    Point1="-161.541649819042,35.9662124165658"
+                    Point2="-165.541649819042,35.9662124165658"
+                    Point3="-165.541649819042,39.9662124165658" />
                   <mssgle:LineSegment
-                    End="-87.999995082617,41.6052618281829" />
+                    End="-165.541649819042,80.7807032042978" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-162.292399885059,29.5526309140915,236.5848046875,12.1953125"
+              BoundingBox="-201.063227253271,40.9662124165658,236.5848046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181.333333333334,42.6666666666667"
-          Id="Package\Add new Customer\Destino de OLE DB 1"
-          TopLeft="458.124979520217,255.631576250382" />
         <EdgeLayout
           Id="Package\Add new Customer.Paths[Salida de entradas no coincidentes de búsqueda]"
-          TopLeft="425.874984716997,208.842103760659">
+          TopLeft="460.874983152375,204.719296795702">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="122.916661469887,46.7894724897236"
+              EndConnector="207.791683514291,102.280703204298"
               Start="0,0"
-              End="122.916661469887,39.2894724897236">
+              End="207.791683514291,94.7807032042978">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.0623776809985" />
+                    End="0,37.6699161202695" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.0623776809985"
-                    Point2="0,19.0623776809985"
-                    Point3="4,19.0623776809985" />
+                    Point1="0,37.6699161202695"
+                    Point2="0,41.6699161202695"
+                    Point3="4,41.6699161202695" />
                   <mssgle:LineSegment
-                    End="118.916661469887,19.0623776809985" />
+                    End="203.791683514291,41.6699161202695" />
                   <mssgle:CubicBezierSegment
-                    Point1="118.916661469887,19.0623776809985"
-                    Point2="122.916661469887,19.0623776809985"
-                    Point3="122.916661469887,23.0623776809985" />
+                    Point1="203.791683514291,41.6699161202695"
+                    Point2="207.791683514291,41.6699161202695"
+                    Point3="207.791683514291,45.6699161202695" />
                   <mssgle:LineSegment
-                    End="122.916661469887,39.2894724897236" />
+                    End="207.791683514291,94.7807032042978" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-63.9040716088067,24.0623776809985,250.7248046875,12.1953125"
+              BoundingBox="-21.4665605866043,46.6699161202695,250.7248046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1522,10 +1633,41 @@ where [refTable].[CustomerID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Add new Customer\Get Customer">
+    design-time-name="Package\Add new Customer\Origen de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add new Customer\Add Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add new Customer\Update Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1549,32 +1691,6 @@ where [refTable].[CustomerID] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add new Customer\Destino de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add new Customer\Destino de OLE DB 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

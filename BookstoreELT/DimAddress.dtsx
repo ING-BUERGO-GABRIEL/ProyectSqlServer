@@ -1,125 +1,125 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/23/2025 6:57:49 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-MDQIRT4"
   DTS:CreatorName="DESKTOP-MDQIRT4\\Gabriel-MSI"
-  DTS:DTSID="{18B977A2-2657-4DE1-B2DF-DD5A1D52E000}"
+  DTS:DTSID="{E530564E-A035-44EF-8607-A9B2A6B0B008}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="DimAddress"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{FD1B233A-68DD-4A81-8E7C-B13976CE3824}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{ADBAA8FA-A612-428E-81E1-1E1C30638098}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Destination.BookstoreDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{688E7E54-9665-49AF-94FD-B602FBCDFDC8}"
+      DTS:DTSID="{41CD5DBC-7140-48EB-ABFB-3AB444A61363}"
       DTS:ObjectName="Destination.BookstoreDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookstoreDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimAddress-{688E7E54-9665-49AF-94FD-B602FBCDFDC8}localhost.BookstoreDW;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookstoreDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DimAddress-{41CD5DBC-7140-48EB-ABFB-3AB444A61363}localhost.BookstoreDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Sourse.BookstoreOLTP]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{F78B60BD-CE3C-40CA-8637-BB866D923B4B}"
+      DTS:DTSID="{861E7D52-4DF3-4CF8-AAB0-B78BD839EF12}"
       DTS:ObjectName="Sourse.BookstoreOLTP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookstoreOLTP;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimAddress-{F78B60BD-CE3C-40CA-8637-BB866D923B4B}localhost.BookstoreOLTP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookstoreOLTP;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DimAddress-{861E7D52-4DF3-4CF8-AAB0-B78BD839EF12}localhost.BookstoreOLTP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{827CAC14-1839-455F-86F3-E44BC8729134}"
+      DTS:DTSID="{61B80B00-DF51-45E1-83B3-5BA8E139A21A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="DBTS">
+      DTS:ObjectName="dbts">
       <DTS:VariableValue
         DTS:DataType="20">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{067131AD-3806-465E-A233-35EB801F7190}"
+      DTS:DTSID="{6426797E-5BD9-485B-B4FB-8D6D16805E5A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="LastRowVersion">
+      DTS:ObjectName="lastRowVersion">
       <DTS:VariableValue
         DTS:DataType="20">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Clear UP Staging"
+      DTS:refId="Package\Clean-up Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{71150B56-1220-4C4A-998F-CBCB595D8FEB}"
+      DTS:DTSID="{A2825964-07F0-4332-8F1F-42274A87DBB1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Clear UP Staging"
+      DTS:ObjectName="Clean-up Staging"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{688E7E54-9665-49AF-94FD-B602FBCDFDC8}"
+          SQLTask:Connection="{41CD5DBC-7140-48EB-ABFB-3AB444A61363}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE staging.DimAddress" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get Address RowVersion"
+      DTS:refId="Package\Get Database RowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{87C8C992-B455-4CEE-B3A6-6820723DEBE2}"
+      DTS:DTSID="{FACCBF72-9C0E-4868-8CE6-C65F998EC5CB}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get Address RowVersion"
+      DTS:ObjectName="Get Database RowVersion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{688E7E54-9665-49AF-94FD-B602FBCDFDC8}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'address'"
+          SQLTask:Connection="{861E7D52-4DF3-4CF8-AAB0-B78BD839EF12}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion]"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
-            SQLTask:ResultName="LastRowVersion"
-            SQLTask:DtsVariableName="User::LastRowVersion" />
+            SQLTask:ResultName="DBTS"
+            SQLTask:DtsVariableName="User::dbts" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get DBTS"
+      DTS:refId="Package\Get LastRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{021CBA96-5C1B-4B00-B38C-CCB8F1C8E7D6}"
+      DTS:DTSID="{42B8CA8B-9F8A-4A7E-8B4C-35C03B0D4959}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get DBTS"
+      DTS:ObjectName="Get LastRowVersion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F78B60BD-CE3C-40CA-8637-BB866D923B4B}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion] "
+          SQLTask:Connection="{41CD5DBC-7140-48EB-ABFB-3AB444A61363}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'address'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
-            SQLTask:ResultName="DBTS"
-            SQLTask:DtsVariableName="User::DBTS" />
+            SQLTask:ResultName="LastRowVersion"
+            SQLTask:DtsVariableName="User::lastRowVersion" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -127,7 +127,7 @@
       DTS:refId="Package\Load Address Changes"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
-      DTS:DTSID="{87E56021-F735-4A17-8E52-3DFE8405A08D}"
+      DTS:DTSID="{1D8E3E04-9543-4687-B8B6-192540D449C6}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Address Changes"
@@ -137,213 +137,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Load Address Changes\Add Address"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
-              description="Destino de OLE DB"
-              name="Add Address"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[DimAddress]</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load Address Changes\Add Address.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Destination.BookstoreDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[Destination.BookstoreDW]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB]"
-                  errorOrTruncationOperation="Insertar"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de destino de OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].Columns[city]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="city"
-                      externalMetadataColumnId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[city]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].Columns[CountryName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="CountryName"
-                      externalMetadataColumnId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[CountryName]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].Columns[AddressStatusID]"
-                      cachedDataType="i4"
-                      cachedName="AddressStatusID"
-                      externalMetadataColumnId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].Columns[AddressStatus]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="AddressStatus"
-                      externalMetadataColumnId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].Columns[address_id]"
-                      cachedDataType="i4"
-                      cachedName="address_id"
-                      externalMetadataColumnId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[address_id]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].Columns[street_number]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="street_number"
-                      externalMetadataColumnId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[street_number]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].Columns[street_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="street_name"
-                      externalMetadataColumnId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[street_name]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].Columns[country_id]"
-                      cachedDataType="i4"
-                      cachedName="country_id"
-                      externalMetadataColumnId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryID]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[country_id]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressKey]"
-                      dataType="i4"
-                      name="AddressKey" />
-                    <externalMetadataColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
-                      dataType="i4"
-                      name="AddressID" />
-                    <externalMetadataColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="StreetNumber" />
-                    <externalMetadataColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="StreetName" />
-                    <externalMetadataColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="City" />
-                    <externalMetadataColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryID]"
-                      dataType="i4"
-                      name="CountryID" />
-                    <externalMetadataColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="CountryName" />
-                    <externalMetadataColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
-                      dataType="i4"
-                      name="AddressStatusID" />
-                    <externalMetadataColumn
-                      refId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="AddressStatus" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load Address Changes\Add Address.Outputs[Salida de error de destino de OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Address Changes\Add Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load Address Changes\Add Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load Address Changes\Add Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load Address Changes\Add Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Load Address Changes\Get Addresses"
               componentClassID="Microsoft.OLEDBSource"
@@ -369,8 +162,7 @@
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetAddressChangesByRowVersion] @startRow = ?
- ,@endRow = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetAddressChangesByRowVersion] @startRow = ?, @endRow = ?</property>
                 <property
                   dataType="System.String"
                   description="Variable que contiene el comando SQL para ejecutar."
@@ -391,7 +183,7 @@
                 <property
                   dataType="System.String"
                   description="Asignaciones entre los parámetros del comando SQL y las variables."
-                  name="ParameterMapping">"@startRow:Input",{067131AD-3806-465E-A233-35EB801F7190};"@endRow:Input",{827CAC14-1839-455F-86F3-E44BC8729134};</property>
+                  name="ParameterMapping">"@startRow:Input",{6426797E-5BD9-485B-B4FB-8D6D16805E5A};"@endRow:Input",{61B80B00-DF51-45E1-83B3-5BA8E139A21A};</property>
               </properties>
               <connections>
                 <connection
@@ -626,11 +418,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Load Address Changes\Load staging"
+              refId="Package\Load Address Changes\Load New Address"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Destino de OLE DB"
-              name="Load staging"
+              name="Load New Address"
               usesDispositions="true"
               version="4">
               <properties>
@@ -641,7 +433,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[staging].[DimAddress]</property>
+                  name="OpenRowset">[dbo].[DimAddress]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -683,7 +475,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Address Changes\Load staging.Connections[OleDbConnection]"
+                  refId="Package\Load Address Changes\Load New Address.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Destination.BookstoreDW]"
                   connectionManagerRefId="Package.ConnectionManagers[Destination.BookstoreDW]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -691,111 +483,115 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB]"
+                  refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB]"
                   errorOrTruncationOperation="Insertar"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].Columns[city]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].Columns[city]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="city"
-                      externalMetadataColumnId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      externalMetadataColumnId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
                       lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[city]" />
                     <inputColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].Columns[address_id]"
-                      cachedDataType="i4"
-                      cachedName="address_id"
-                      externalMetadataColumnId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[address_id]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].Columns[street_number]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="street_number"
-                      externalMetadataColumnId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[street_number]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].Columns[street_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="street_name"
-                      externalMetadataColumnId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[street_name]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].Columns[country_id]"
-                      cachedDataType="i4"
-                      cachedName="country_id"
-                      externalMetadataColumnId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryID]"
-                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[country_id]" />
-                    <inputColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].Columns[CountryName]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].Columns[CountryName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="200"
                       cachedName="CountryName"
-                      externalMetadataColumnId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
+                      externalMetadataColumnId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
                       lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[CountryName]" />
                     <inputColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].Columns[AddressStatusID]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].Columns[AddressStatusID]"
                       cachedDataType="i4"
                       cachedName="AddressStatusID"
-                      externalMetadataColumnId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
+                      externalMetadataColumnId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
                       lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]" />
                     <inputColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].Columns[AddressStatus]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].Columns[AddressStatus]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="AddressStatus"
-                      externalMetadataColumnId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
+                      externalMetadataColumnId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
                       lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].Columns[address_id]"
+                      cachedDataType="i4"
+                      cachedName="address_id"
+                      externalMetadataColumnId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[address_id]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].Columns[street_number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="street_number"
+                      externalMetadataColumnId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[street_number]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].Columns[street_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="street_name"
+                      externalMetadataColumnId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[street_name]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].Columns[country_id]"
+                      cachedDataType="i4"
+                      cachedName="country_id"
+                      externalMetadataColumnId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryID]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[country_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressKey]"
+                      dataType="i4"
+                      name="AddressKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
                       dataType="i4"
                       name="AddressID" />
                     <externalMetadataColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="StreetNumber" />
                     <externalMetadataColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
                       codePage="1252"
                       dataType="str"
                       length="200"
                       name="StreetName" />
                     <externalMetadataColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryID]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryID]"
                       dataType="i4"
                       name="CountryID" />
                     <externalMetadataColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
                       codePage="1252"
                       dataType="str"
                       length="200"
                       name="CountryName" />
                     <externalMetadataColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
                       dataType="i4"
                       name="AddressStatusID" />
                     <externalMetadataColumn
-                      refId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
+                      refId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
                       codePage="1252"
                       dataType="str"
                       length="30"
@@ -805,22 +601,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Load Address Changes\Load staging.Outputs[Salida de error de destino de OLE DB]"
+                  refId="Package\Load Address Changes\Load New Address.Outputs[Salida de error de destino de OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB]">
+                  synchronousInputId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Address Changes\Load staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      refId="Package\Load Address Changes\Load New Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Address Changes\Load staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Load Address Changes\Load New Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Address Changes\Load staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Load Address Changes\Load New Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Address Changes\Load staging.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Load Address Changes\Load New Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -864,7 +660,7 @@ where [refTable].[AddressID] = ?</property>
                   dataType="System.Int32"
                   description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
@@ -932,7 +728,6 @@ where [refTable].[AddressID] = ?</property>
                 <output
                   refId="Package\Load Address Changes\Lookup.Outputs[Salida de entradas coincidentes de búsqueda]"
                   errorOrTruncationOperation="Búsqueda"
-                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Salida de entradas coincidentes de búsqueda"
                   synchronousInputId="Package\Load Address Changes\Lookup.Inputs[Entrada de búsqueda]">
@@ -986,16 +781,219 @@ where [refTable].[AddressID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Load Address Changes\Update Exiting Address"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Update Exiting Address"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[staging].[DimAddress]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Address Changes\Update Exiting Address.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Destination.BookstoreDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[Destination.BookstoreDW]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].Columns[address_id]"
+                      cachedDataType="i4"
+                      cachedName="address_id"
+                      externalMetadataColumnId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[address_id]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].Columns[street_number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="street_number"
+                      externalMetadataColumnId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[street_number]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].Columns[street_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="street_name"
+                      externalMetadataColumnId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[street_name]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].Columns[country_id]"
+                      cachedDataType="i4"
+                      cachedName="country_id"
+                      externalMetadataColumnId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryID]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[country_id]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].Columns[CountryName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="CountryName"
+                      externalMetadataColumnId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[CountryName]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].Columns[AddressStatusID]"
+                      cachedDataType="i4"
+                      cachedName="AddressStatusID"
+                      externalMetadataColumnId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[AddressStatusID]" />
+                    <inputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].Columns[AddressStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="AddressStatus"
+                      externalMetadataColumnId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
+                      lineageId="Package\Load Address Changes\Get Addresses.Outputs[Salida de origen de OLE DB].Columns[AddressStatus]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressID]"
+                      dataType="i4"
+                      name="AddressID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="StreetNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[StreetName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="StreetName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryID]"
+                      dataType="i4"
+                      name="CountryID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[CountryName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="CountryName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatusID]"
+                      dataType="i4"
+                      name="AddressStatusID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="AddressStatus" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Address Changes\Update Exiting Address.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Address Changes\Update Exiting Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Address Changes\Update Exiting Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Address Changes\Update Exiting Address.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Load Address Changes.Paths[Salida de entradas coincidentes de búsqueda]"
-              endId="Package\Load Address Changes\Load staging.Inputs[Entrada de destino de OLE DB]"
+              endId="Package\Load Address Changes\Update Exiting Address.Inputs[Entrada de destino de OLE DB]"
               name="Salida de entradas coincidentes de búsqueda"
               startId="Package\Load Address Changes\Lookup.Outputs[Salida de entradas coincidentes de búsqueda]" />
             <path
               refId="Package\Load Address Changes.Paths[Salida de entradas no coincidentes de búsqueda]"
-              endId="Package\Load Address Changes\Add Address.Inputs[Entrada de destino de OLE DB]"
+              endId="Package\Load Address Changes\Load New Address.Inputs[Entrada de destino de OLE DB]"
               name="Salida de entradas no coincidentes de búsqueda"
               startId="Package\Load Address Changes\Lookup.Outputs[Salida de entradas no coincidentes de búsqueda]" />
             <path
@@ -1011,7 +1009,7 @@ where [refTable].[AddressID] = ?</property>
       DTS:refId="Package\Sync Address"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{CCF7E506-8014-4A50-9B0F-377C46CDB2E9}"
+      DTS:DTSID="{89F655F7-10C8-46A2-BCAF-EC09CB3C0A9E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sync Address"
@@ -1020,28 +1018,28 @@ where [refTable].[AddressID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{688E7E54-9665-49AF-94FD-B602FBCDFDC8}"
+          SQLTask:Connection="{41CD5DBC-7140-48EB-ABFB-3AB444A61363}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeDimAddress] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Update LastRowVersion"
+      DTS:refId="Package\Update Config"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{ACD8DF2C-EC3D-4328-B4DB-08CF2D548091}"
+      DTS:DTSID="{73D9D252-4D0C-4EC8-B2A7-4714732D6B9C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Update LastRowVersion"
+      DTS:ObjectName="Update Config"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{688E7E54-9665-49AF-94FD-B602FBCDFDC8}"
+          SQLTask:Connection="{41CD5DBC-7140-48EB-ABFB-3AB444A61363}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName = 'address', @lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::DBTS"
+            SQLTask:DtsVariableName="User::dbts"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="3"
             SQLTask:ParameterSize="-1" />
@@ -1053,31 +1051,31 @@ where [refTable].[AddressID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{3B1A147E-0166-4C98-8CCE-047F0796407F}"
-      DTS:From="Package\Get DBTS"
+      DTS:DTSID="{1D2C79C0-E83C-4719-B5FA-C2081B2C1809}"
+      DTS:From="Package\Get Database RowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
-      DTS:To="Package\Get Address RowVersion" />
+      DTS:To="Package\Get LastRowVersion" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
-      DTS:DTSID="{B7A8F17E-5A4B-4421-86C6-9861C2E17928}"
-      DTS:From="Package\Get Address RowVersion"
+      DTS:DTSID="{9A1B4061-84B7-440F-A731-0142FFCF5AD8}"
+      DTS:From="Package\Get LastRowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"
-      DTS:To="Package\Clear UP Staging" />
+      DTS:To="Package\Clean-up Staging" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
       DTS:CreationName=""
-      DTS:DTSID="{DE9C09B6-7930-4E22-A2BF-43F4BE09AFEA}"
-      DTS:From="Package\Clear UP Staging"
+      DTS:DTSID="{5710D2EE-6E0C-4817-8071-037ACB4AD7B3}"
+      DTS:From="Package\Clean-up Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 2"
       DTS:To="Package\Load Address Changes" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
       DTS:CreationName=""
-      DTS:DTSID="{BC93C84A-E0E8-4B68-BE0E-4D6DF5C93409}"
+      DTS:DTSID="{C2D93E8E-D428-49E6-9EC4-8DD21CDACA6D}"
       DTS:From="Package\Load Address Changes"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 3"
@@ -1085,11 +1083,11 @@ where [refTable].[AddressID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
       DTS:CreationName=""
-      DTS:DTSID="{C25FFDA0-8FAF-45E5-BA6F-78DE4917B8CC}"
+      DTS:DTSID="{2E97036F-5DF8-45FF-A5D2-FFCFD0BBD0FC}"
       DTS:From="Package\Sync Address"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 4"
-      DTS:To="Package\Update LastRowVersion" />
+      DTS:To="Package\Update Config" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -1104,43 +1102,43 @@ where [refTable].[AddressID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
-          Id="Package\Clear UP Staging"
-          TopLeft="24.1666666666667,210.833333333333" />
+          Size="164,42"
+          Id="Package\Clean-up Staging"
+          TopLeft="52.1666666666667,208.833333333333" />
         <NodeLayout
-          Size="198.666666666667,42.6666666666667"
-          Id="Package\Get Address RowVersion"
-          TopLeft="5.50000000000001,108.166666666667" />
+          Size="180,42"
+          Id="Package\Get LastRowVersion"
+          TopLeft="47.5,104.166666666667" />
         <NodeLayout
-          Size="128,42.6666666666667"
-          Id="Package\Get DBTS"
+          Size="209,42"
+          Id="Package\Get Database RowVersion"
           TopLeft="40.8333333333333,5.49999999999992" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="194,42"
           Id="Package\Load Address Changes"
-          TopLeft="9.50000000000004,313.5" />
+          TopLeft="36.5000000000001,313.5" />
         <NodeLayout
-          Size="145.333333333334,42.6666666666667"
+          Size="145,43"
           Id="Package\Sync Address"
-          TopLeft="32.1666666666667,416.166666666667" />
+          TopLeft="58.1666666666667,417.166666666667" />
         <NodeLayout
-          Size="194.666666666667,42.6666666666667"
-          Id="Package\Update LastRowVersion"
-          TopLeft="7.50000000000006,518.833333333333" />
+          Size="149,42"
+          Id="Package\Update Config"
+          TopLeft="36.5000000000001,520.833333333333" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="104.833333333333,48.1666666666666">
+          TopLeft="141.416666666667,47.4999999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,56.6666666666671"
               Start="0,0"
-              End="0,52.5">
+              End="0,49.1666666666671">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,49.1666666666671" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1151,18 +1149,18 @@ where [refTable].[AddressID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="104.833333333333,150.833333333333">
+          TopLeft="135.833333333333,146.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,62.666666666666"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,55.166666666666">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,55.166666666666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1173,18 +1171,18 @@ where [refTable].[AddressID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="104.833333333333,253.5">
+          TopLeft="133.833333333333,250.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,62.666666666667"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,55.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,55.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1195,18 +1193,18 @@ where [refTable].[AddressID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="104.833333333333,356.166666666667">
+          TopLeft="132.083333333333,355.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,61.666666666667"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,54.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,54.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1217,18 +1215,30 @@ where [refTable].[AddressID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
-          TopLeft="104.833333333333,458.833333333333">
+          TopLeft="130.666666666667,460.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-19.6666666666666,60.666666666666"
               Start="0,0"
-              End="0,52.5">
+              End="-19.6666666666666,53.166666666666">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,26.333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.333333333333"
+                    Point2="0,30.333333333333"
+                    Point3="-4,30.333333333333" />
+                  <mssgle:LineSegment
+                    End="-15.6666666666666,30.333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.6666666666666,30.333333333333"
+                    Point2="-19.6666666666666,30.333333333333"
+                    Point3="-19.6666666666666,34.333333333333" />
+                  <mssgle:LineSegment
+                    End="-19.6666666666666,53.166666666666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1246,17 +1256,21 @@ where [refTable].[AddressID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="114.666666666667,42.6666666666667"
+          Size="115,43"
           Id="Package\Load Address Changes\Lookup"
           TopLeft="343.124984661118,138.210524798265" />
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
+          Size="194,42"
+          Id="Package\Load Address Changes\Update Exiting Address"
+          TopLeft="105.999992847443,273.052629129873" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Load Address Changes\Load New Address"
+          TopLeft="489.624979855493,226.789471205087" />
+        <NodeLayout
+          Size="151,43"
           Id="Package\Load Address Changes\Get Addresses"
           TopLeft="333.124985108152,36.9473680153778" />
-        <NodeLayout
-          Size="141.333333333334,42.6666666666667"
-          Id="Package\Load Address Changes\Load staging"
-          TopLeft="159.999992847443,223.052629129873" />
         <EdgeLayout
           Id="Package\Load Address Changes.Paths[Salida de origen de OLE DB]"
           TopLeft="408.458318441486,79.6140346820445">
@@ -1292,78 +1306,74 @@ where [refTable].[AddressID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Address Changes.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="382.680540216674,180.877191464932">
+          Id="Package\Load Address Changes.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="418.458317994451,181.210524798265">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-152.013880702564,42.1754376649413"
+              EndConnector="157.166661861042,45.578946406822"
               Start="0,0"
-              End="-152.013880702564,34.6754376649413">
+              End="157.166661861042,38.078946406822">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.2184126246779" />
+                    End="0,14.6068426154779" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.2184126246779"
-                    Point2="0,17.2184126246779"
-                    Point3="-4,17.2184126246779" />
+                    Point1="0,14.6068426154779"
+                    Point2="0,18.6068426154779"
+                    Point3="4,18.6068426154779" />
                   <mssgle:LineSegment
-                    End="-148.013880702564,17.2184126246779" />
+                    End="153.166661861042,18.6068426154779" />
                   <mssgle:CubicBezierSegment
-                    Point1="-148.013880702564,17.2184126246779"
-                    Point2="-152.013880702564,17.2184126246779"
-                    Point3="-152.013880702564,21.2184126246779" />
+                    Point1="153.166661861042,18.6068426154779"
+                    Point2="157.166661861042,18.6068426154779"
+                    Point3="157.166661861042,22.6068426154779" />
                   <mssgle:LineSegment
-                    End="-152.013880702564,34.6754376649413" />
+                    End="157.166661861042,38.078946406822" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-175.825963788782,22.2184126246779,199.638046875,12.1953125"
+              BoundingBox="-28.3056925069792,23.6068426154779,213.778046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,42.6666666666667"
-          Id="Package\Load Address Changes\Add Address"
-          TopLeft="450.624979855493,225.789471205087" />
         <EdgeLayout
-          Id="Package\Load Address Changes.Paths[Salida de entradas no coincidentes de búsqueda]"
-          TopLeft="418.236095772229,180.877191464932">
+          Id="Package\Load Address Changes.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="382.791651327785,181.210524798265">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="102.388884083264,44.9122797401551"
+              EndConnector="-179.791658480342,91.842104331608"
               Start="0,0"
-              End="102.388884083264,37.4122797401551">
+              End="-179.791658480342,84.342104331608">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.3357472333661" />
+                    End="0,33.4930031405192" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.3357472333661"
-                    Point2="0,18.3357472333661"
-                    Point3="4,18.3357472333661" />
+                    Point1="0,33.4930031405192"
+                    Point2="0,37.4930031405192"
+                    Point3="-4,37.4930031405192" />
                   <mssgle:LineSegment
-                    End="98.3888840832643,18.3357472333661" />
+                    End="-175.791658480342,37.4930031405192" />
                   <mssgle:CubicBezierSegment
-                    Point1="98.3888840832643,18.3357472333661"
-                    Point2="102.388884083264,18.3357472333661"
-                    Point3="102.388884083264,22.3357472333661" />
+                    Point1="-175.791658480342,37.4930031405192"
+                    Point2="-179.791658480342,37.4930031405192"
+                    Point3="-179.791658480342,41.4930031405192" />
                   <mssgle:LineSegment
-                    End="102.388884083264,37.4122797401551" />
+                    End="-179.791658480342,84.342104331608" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.6945813958678,23.3357472333661,213.778046875,12.1953125"
+              BoundingBox="-189.714852677671,42.4930031405192,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1386,10 +1396,36 @@ where [refTable].[AddressID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Address Changes\Update Exiting Address">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Address Changes\Load New Address">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1398,32 +1434,6 @@ where [refTable].[AddressID] = ?</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Address Changes\Load staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Address Changes\Add Address">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
