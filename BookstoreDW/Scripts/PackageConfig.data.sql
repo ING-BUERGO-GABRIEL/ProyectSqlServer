@@ -91,6 +91,13 @@ END
 GO
 IF NOT EXISTS (SELECT TOP (1) 1
               FROM [dbo].[PackageConfig]
+              WHERE [TableName] = 'orders')
+BEGIN
+    INSERT [dbo].[PackageConfig] ([TableName], [LastRowVersion]) VALUES ('orders', 0)
+END
+GO
+IF NOT EXISTS (SELECT TOP (1) 1
+              FROM [dbo].[PackageConfig]
               WHERE [TableName] = 'publisher')
 BEGIN
     INSERT [dbo].[PackageConfig] ([TableName], [LastRowVersion]) VALUES ('publisher', 0)
