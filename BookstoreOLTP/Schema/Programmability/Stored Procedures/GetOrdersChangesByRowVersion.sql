@@ -52,7 +52,7 @@ BEGIN
                                                         END))
                                 END
               ,ShipDateKey = CASE
-                                        WHEN ls.[status_date] IS NULL THEN NULL
+                                        WHEN ls.[status_date] IS NULL THEN 0
                                         ELSE CONVERT(INT,
                                                         (CONVERT(CHAR(4),DATEPART(YEAR,ls.[status_date]))
                                                 + CASE
@@ -67,7 +67,7 @@ BEGIN
               ,ord.[customer_id]
               ,ord.[shipping_method_id]
               ,ord.[dest_address_id]
-              ,ls.[status_id]
+              ,ISNULL(ls.[status_id], 0) AS [status_id]
               ,ol.[book_id]
               ,Quantity = 1
               ,UnitPrice = ISNULL(ol.[price], 0)
