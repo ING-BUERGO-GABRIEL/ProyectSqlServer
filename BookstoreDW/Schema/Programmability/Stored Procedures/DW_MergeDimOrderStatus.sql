@@ -8,6 +8,11 @@ BEGIN
                 SELECT [StatusID]
                       ,[StatusValue]
                 FROM [staging].[DimOrderStatus]
+
+                UNION ALL
+
+                SELECT [StatusID] = 0
+                      ,[StatusValue] = 'Unknown'
         ) AS source
                 ON target.[StatusID] = source.[StatusID]
         WHEN MATCHED THEN
