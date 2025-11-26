@@ -42,14 +42,14 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
-    <DTS:Variable
+      <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{A25E2EFB-DB60-4B51-93F7-E687B59EF383}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="dbts">
       <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
+        DTS:DataType="20">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -58,7 +58,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="lastRowVersion">
       <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
+        DTS:DataType="20">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -528,7 +528,7 @@ where [refTable].[CustomerID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[DimCustomer]</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -537,7 +537,7 @@ where [refTable].[CustomerID] = ?</property>
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetCustomerChangesByRowVersion] @startRow = ?, @endRow = ?</property>
                 <property
                   dataType="System.String"
                   description="Variable que contiene el comando SQL para ejecutar."
@@ -554,17 +554,17 @@ where [refTable].[CustomerID] = ?</property>
                   dataType="System.Int32"
                   description="Especifica el modo utilizado para obtener acceso a la base de datos."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="Asignaciones entre los parámetros del comando SQL y las variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"@startRow:Input",{E86E243E-59D1-4A24-A947-222D6693E8EC};"@endRow:Input",{A25E2EFB-DB60-4B51-93F7-E687B59EF383};</property>
               </properties>
               <connections>
                 <connection
                   refId="Package\Add new Customer\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Destination.BookstoreDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[Destination.BookstoreDW]"
+                  connectionManagerID="Package.ConnectionManagers[Source.BookstoreOLTP]"
+                  connectionManagerRefId="Package.ConnectionManagers[Source.BookstoreOLTP]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
