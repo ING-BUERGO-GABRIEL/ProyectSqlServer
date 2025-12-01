@@ -441,6 +441,13 @@
             "isHidden": true,
             "sourceColumn": "CalendarSemester",
             "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "type": "calculated",
+            "name": "Year",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "FORMAT('Date'[CalendarYear], \"0\")"
           }
         ],
         "partitions": [
@@ -679,6 +686,30 @@
           {
             "name": "TotalQuantity",
             "expression": " SUM(Orders[Quantity])"
+          },
+          {
+            "name": "TotalOrders",
+            "expression": " DISTINCTCOUNT(Orders[OrderID])"
+          },
+          {
+            "name": "TotalGrossSales",
+            "expression": " SUMX(Orders, Orders[Quantity] * Orders[UnitPrice])"
+          },
+          {
+            "name": "AverageOrderValue",
+            "expression": " DIVIDE([TotalGrossSales], [TotalOrders])"
+          },
+          {
+            "name": "CompletedOrders",
+            "expression": " CALCULATE([TotalOrders], OrderStatus[StatusValue] = \"Delivered\")"
+          },
+          {
+            "name": "ShippingCostBase",
+            "expression": " SUMX(VALUES(Orders[OrderID]), MAX(ShippingMethod[BaseCost]))"
+          },
+          {
+            "name": "GrossProfit",
+            "expression": " [TotalGrossSales] - [ShippingCostBase]"
           }
         ],
         "annotations": [
