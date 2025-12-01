@@ -684,32 +684,32 @@
         ],
         "measures": [
           {
-            "name": "TotalQuantity",
+            "name": "Cantidad Total",
             "expression": " SUM(Orders[Quantity])"
           },
           {
-            "name": "TotalOrders",
+            "name": "Ordenes Totales",
             "expression": " DISTINCTCOUNT(Orders[OrderID])"
           },
           {
-            "name": "TotalGrossSales",
+            "name": "Importe bruto sin descuentos",
             "expression": " SUMX(Orders, Orders[Quantity] * Orders[UnitPrice])"
           },
           {
-            "name": "AverageOrderValue",
-            "expression": " DIVIDE([TotalGrossSales], [TotalOrders])"
+            "name": "Ticket promedio",
+            "expression": " DIVIDE([Importe bruto sin descuentos], [Ordenes Totales])"
           },
           {
-            "name": "CompletedOrders",
-            "expression": " CALCULATE([TotalOrders], OrderStatus[StatusValue] = \"Delivered\")"
+            "name": "Pedidos completados",
+            "expression": " CALCULATE([Ordenes Totales], OrderStatus[StatusValue] = \"Delivered\")"
           },
           {
-            "name": "ShippingCostBase",
+            "name": "Costo base de envío por pedido",
             "expression": " SUMX(VALUES(Orders[OrderID]), MAX(ShippingMethod[BaseCost]))"
           },
           {
-            "name": "GrossProfit",
-            "expression": " [TotalGrossSales] - [ShippingCostBase]"
+            "name": "Margen bruto estimado",
+            "expression": " [Importe bruto sin descuentos] - [Costo base de envío por pedido]"
           }
         ],
         "annotations": [
